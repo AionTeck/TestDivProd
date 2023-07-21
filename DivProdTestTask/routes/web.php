@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,4 @@ Route::get('/', [\App\Http\Controllers\MainPageController::class, 'show'])->name
 Route::get('/show', [\App\Http\Controllers\ShowReqPageController::class, 'show'])->name('show');
 
 Route::get('/requests', [\App\Http\Controllers\SendReqPageController::class, 'show'])->name('req');
+Route::post('/requests/submit', [\App\Http\Controllers\SendReqPageController::class, 'send'])->name('req_send');
