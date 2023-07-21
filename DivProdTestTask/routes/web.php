@@ -21,7 +21,10 @@ Route::get('/show',
     [\App\Http\Controllers\ShowReqPageController::class, 'show'])->name('show');
 Route::get('/show/msg-{id}',
     [\App\Http\Controllers\ShowReqPageController::class, 'showMessage'])->name('showMessage');
-
+Route::get('/show/msg-{id}/answer',
+    [\App\Http\Controllers\ShowReqPageController::class, 'answerMessage'])->name('answerMessage');
+Route::post('/show/msg-{id}/answer',
+    [\App\Http\Controllers\ShowReqPageController::class, 'answerMessageSend'])->name('answerMessage_send');
 
 Route::get('/requests',
     [\App\Http\Controllers\SendReqPageController::class, 'show'])->name('req');

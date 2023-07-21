@@ -23,4 +23,23 @@ class ShowReqPageController extends Controller
         ['data'=>$showReq->find($id)]
         );
     }
+
+    public function answerMessage($id){
+        $showReq = new SendRequest;
+
+        return view('answerMessage',
+            ['data'=>$showReq->find($id)]
+        );
+    }
+
+    public function answerMessageSend($id, Request $request){
+
+        $sendReq = SendRequest::find($id);
+
+        $sendReq -> comment = $request -> input('comment');
+        $sendReq -> status = $request -> input('status');
+
+        $sendReq->save();
+        return redirect()->route('main');
+    }
 }

@@ -9,7 +9,7 @@
             <p>Status: {{ $data->status }}</p>
             <p>Massage:</br>{{ $data->message }}</p>
             <p><small>{{ $data->created_at }}</small></p>
-            <a href="{{ route('showMessage', $data->id)}}">Answer message</a>
+            <a href="{{ route('answerMessage', $data->id)}}">Answer message</a>
         </div>
 
 @endsection
