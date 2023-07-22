@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendAnswerMail;
 use Illuminate\Http\Request;
 use App\Models\SendRequest;
+use Illuminate\Support\Facades\Mail;
 
 class ShowReqPageController extends Controller
 {
@@ -40,6 +42,12 @@ class ShowReqPageController extends Controller
         $sendReq -> status = ('Resolved');
 
         $sendReq->save();
+
+
+        $name = $sendReq['name'];
+        $message = $sendReq['message'];
+        $comment = $sendReq['comment'];
+        Mail::to($sendReq['email'])->send(new SendAnswerMail($sendReq,$name,$message,$comment));
         return redirect()->route('main');
     }
 
@@ -63,4 +71,6 @@ class ShowReqPageController extends Controller
         return view('showReq',
             ['data' => $showReq->orderBy('created_at', 'desc')->get()]);
     }
+
+
 }
