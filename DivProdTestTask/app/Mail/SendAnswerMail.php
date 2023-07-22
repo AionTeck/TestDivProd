@@ -13,11 +13,13 @@ class SendAnswerMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    //Создание переменных для работы из контроллера ShowReqPageController.php
     public $sendReq;
     public $name;
     public $message;
     public $comment;
 
+    //Инициализация свойства
     public function __construct($sendReq, $name, $message, $comment)
     {
         $this->sendReq = $sendReq;

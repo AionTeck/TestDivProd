@@ -6,6 +6,8 @@
     <form action="{{ route('answerMessage_send', $data->id) }}" method="post">
         @csrf
 
+
+
         <div class="alert alert-dark">
             <h2>Massage from user {{ $data->name }}</h2>
             <p>{{ $data->email }}</p>

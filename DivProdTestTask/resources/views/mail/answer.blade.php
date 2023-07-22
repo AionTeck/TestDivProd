@@ -1,6 +1,8 @@
 <x-mail::message>
 # Introduction
 
+{{-- Шаблон письма с данными из SendAnswerMail.php   --}}
+
 Hello, {{ $name }}
 
     Your question is:

@@ -1,7 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
+
+                        {{--  Все запросы  --}}
     Requests page
+                                {{--  Кнопки выборки из контроллера ShowReqPageController.php  --}}
     <div class="mt-3">
         <a href="{{ route('show') }}">Show All</a>
         <a href="{{ route('show_active') }}">Active</a>
@@ -10,14 +13,8 @@
     </div>
 
 
-
+{{--  Вывод всех записей из таблицы  --}}
     @foreach($data as $element)
-                    {{--Цикл для выключения решенных заявок--}}
-
-{{--        @if($element->status == 'Resolved')--}}
-{{--            @continue($element)--}}
-{{--        @endif--}}
-
 
         <div class="alert alert-dark">
             <h2>Massage from user {{ $element->name }}</h2>
@@ -26,5 +23,6 @@
             <p><small>{{ $element->created_at }}</small></p>
             <a href="{{ route('showMessage', $element->id)}}">Open message</a>
         </div>
+
     @endforeach
 @endsection

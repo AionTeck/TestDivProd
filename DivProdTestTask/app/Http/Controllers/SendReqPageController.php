@@ -14,13 +14,15 @@ class SendReqPageController extends Controller
     }
 
     public function send(Request $request){
-
+        // Валидация данных, если данные ее не проходят то выводятся ошибки что именно введено неверно
         $validatedData = $request->validate([
             'name' => 'required|min:2|max:150',
             'email' => 'required|email|min:5|max:200',
             'message' =>'required|min:5|max:10000'
         ]);
 
+
+        //Создание и добавление валидных данных в БД
         $sendReq = new SendRequest();
         $sendReq -> name = $request->input('name');
         $sendReq -> email = $request -> input('email');
@@ -28,6 +30,7 @@ class SendReqPageController extends Controller
 
         $sendReq->save();
 
+        //роутинг на главную страницу полсе успешного выполнения отправки запроса
         return redirect()->route('main')->with('success', 'Message was be send!');
     }
 }

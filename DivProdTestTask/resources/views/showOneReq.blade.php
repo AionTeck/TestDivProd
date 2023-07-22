@@ -1,7 +1,8 @@
 @extends('layouts.layout')
 
 @section('content')
-    Requests page
+{{--  Подробный просмотр запроса  --}}
+    Requests {{ $data->id }}
 
         <div class="alert alert-dark">
             <h2>Massage from user {{ $data->name }}</h2>

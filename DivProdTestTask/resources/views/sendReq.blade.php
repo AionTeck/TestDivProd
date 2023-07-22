@@ -3,6 +3,10 @@
 @section('content')
     Send request page
 
+
+{{-- Вывод ошибок из валидатора контроллера SendReqPageController.php --}}
+
+
     @if($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -13,6 +17,7 @@
         </div>
     @endif
 
+{{--  Форма создания запроса  --}}
     <form action="{{ route('req_send') }}" method="post">
         @csrf
 
