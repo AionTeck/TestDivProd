@@ -19,6 +19,12 @@ Route::get('/',
 
 Route::get('/show',
     [\App\Http\Controllers\ShowReqPageController::class, 'show'])->name('show');
+Route::get('/show/active',
+    [\App\Http\Controllers\ShowReqPageController::class, 'show_active'])->name('show_active');
+Route::get('/show/resolved',
+    [\App\Http\Controllers\ShowReqPageController::class, 'show_resolved'])->name('show_resolved');
+Route::get('/show/oldest',
+    [\App\Http\Controllers\ShowReqPageController::class, 'byDateNewest'])->name('byDateNewest');
 Route::get('/show/msg-{id}',
     [\App\Http\Controllers\ShowReqPageController::class, 'showMessage'])->name('showMessage');
 Route::get('/show/msg-{id}/answer',

@@ -19,10 +19,6 @@
             <label for="text">Enter your comment</label>
             <textarea name="comment" id="comment" placeholder="Enter your message"></textarea>
         </div>
-        <div class="form-group mt-2">
-            <label for="status">Enter your solved</label>
-            <input type="text" name="status" value="Resolved" id='status'>
-        </div>
 
         <button type="submit">Send</button>
     </form>

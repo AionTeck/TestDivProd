@@ -2,11 +2,23 @@
 
 @section('content')
     Requests page
+    <div class="mt-3">
+        <a href="{{ route('show') }}">Show All</a>
+        <a href="{{ route('show_active') }}">Active</a>
+        <a href="{{ route('show_resolved') }}">Resolved</a>
+        <a href="{{ route('byDateNewest') }}">Sort by newest requests</a>
+    </div>
+
+
 
     @foreach($data as $element)
-        @if($element->status == 'Resolved')
-            @continue($element)
-        @endif
+                    {{--Цикл для выключения решенных заявок--}}
+
+{{--        @if($element->status == 'Resolved')--}}
+{{--            @continue($element)--}}
+{{--        @endif--}}
+
+
         <div class="alert alert-dark">
             <h2>Massage from user {{ $element->name }}</h2>
             <p>{{ $element->email }}</p>
