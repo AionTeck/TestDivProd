@@ -18,7 +18,7 @@ class RegisterController extends Controller
             $request->validate([
                 'name' => 'required|min:2|max:150',
                 'email' => 'required|email|min:5|max:200', //Знаю что нужно было сделать проверку на уникальность почты, но БД выдает ошибку
-                                                            //Решение которой я не нашел
+                                                            //решение которой я не нашел
                 'password' =>'required|min:8'
             ]);
 
