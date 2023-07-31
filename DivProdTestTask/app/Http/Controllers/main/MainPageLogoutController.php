@@ -1,17 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\main;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class MainPageController extends Controller
+class MainPageLogoutController extends Controller
 {
-    public function show(){
-        return view('main');
-    }
-
-    public function logout(Request $request){
+    public function __invoke(Request $request){
         Auth::logout();
         $request->session()->invalidate();
 
