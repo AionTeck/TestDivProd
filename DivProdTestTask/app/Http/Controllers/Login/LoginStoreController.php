@@ -3,20 +3,16 @@
 namespace App\Http\Controllers\Login;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Login\LoginStore;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
-class LoginStoreController extends Controller
+class LoginStoreController extends BaseController
 {
-    public function __invoke(Request $request)
+    public function __invoke(LoginStore $request)
     {
-        $creditinals = $request->only(['email', 'password']);
-
-        if (Auth::attempt($creditinals)) {
-            return redirect('/');
-        }
-
-        return back()->withInput();
+        $this->service->store($request);
+        return redirect('/');
     }
 }

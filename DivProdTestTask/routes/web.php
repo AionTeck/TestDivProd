@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/show', [ShowController::class, '__invoke'])->name('show');
     Route::get('/show/active', [ActiveController::class, '__invoke'])->name('show_active');
     Route::get('/show/resolved', [ResolvedController::class, '__invoke'])->name('show_resolved');
-    Route::get('/show/oldest', [NewestController::class, '__invoke'])->name('byDateNewest');
+    Route::get('/show/newest', [NewestController::class, '__invoke'])->name('byDateNewest');
     Route::get('/show/msg-{id}', [MessageController::class, '__invoke'])->name('showMessage');
     Route::get('/show/msg-{id}/answer', [AnswerMessageController::class, '__invoke'])->name('answerMessage');
     Route::post('/show/msg-{id}/answer', [AnswerSendController::class, '__invoke'])->name('answerMessage_send');
