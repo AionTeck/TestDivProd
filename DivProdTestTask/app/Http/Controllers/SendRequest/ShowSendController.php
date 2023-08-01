@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\SendRequest;
 
 
-
 class ShowSendController extends Controller
 {
     public function __invoke()

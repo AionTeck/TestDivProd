@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Mail;
 
 class NewestController extends Controller
 {
-public function __invoke()
-{
-    $showReq = new SendRequest;
-    return view('showReq',
-        ['data' => $showReq->orderBy('created_at', 'desc')->get()]);
-}
+    public function __invoke()
+    {
+        $showReq = new SendRequest;
+        return view('showReq',
+            ['data' => $showReq->orderBy('created_at', 'desc')->get()]);
+    }
 }

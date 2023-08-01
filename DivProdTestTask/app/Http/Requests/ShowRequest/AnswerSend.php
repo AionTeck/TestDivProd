@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\SendRequest;
+namespace App\Http\Requests\ShowRequest;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SendReq extends FormRequest
+class AnswerSend extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,7 @@ class SendReq extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:2|max:150',
-            'email' => 'required|email|min:5|max:200',
-            'message' => 'required|min:5|max:10000'
+            'comment' => 'required|min:5|max:10000'
         ];
     }
 }

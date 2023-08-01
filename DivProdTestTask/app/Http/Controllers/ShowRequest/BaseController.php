@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Register;
+namespace App\Http\Controllers\ShowRequest;
 
 use App\Http\Controllers\Controller;
-use App\Services\Register\Service;
+use App\Services\ShowRequest\Service;
 
 class BaseController extends Controller
 {

@@ -9,10 +9,11 @@ use App\Models\User;
 
 class LoginStoreController extends Controller
 {
-    public function __invoke(Request $request){
+    public function __invoke(Request $request)
+    {
         $creditinals = $request->only(['email', 'password']);
 
-        if (Auth::attempt($creditinals)){
+        if (Auth::attempt($creditinals)) {
             return redirect('/');
         }
 

@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class MainPageLogoutController extends Controller
 {
-    public function __invoke(Request $request){
+    public function __invoke(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
 

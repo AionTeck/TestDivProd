@@ -15,7 +15,7 @@ class MessageController extends Controller
         $showReq = new SendRequest;
 
         return view('showOneReq',
-            ['data'=>$showReq->find($id)]
+            ['data' => $showReq->find($id)]
         );
     }
 }

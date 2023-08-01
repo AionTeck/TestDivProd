@@ -12,6 +12,6 @@ class SendRequest extends Model
     protected $fillable = [
         'name',
         'email',
-        'message'
+        'message',
     ];
 }

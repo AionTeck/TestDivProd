@@ -9,7 +9,8 @@ use App\Models\User;
 
 class LoginCreateController extends Controller
 {
-    public function __invoke(){
+    public function __invoke()
+    {
         return view('login');
     }
 }

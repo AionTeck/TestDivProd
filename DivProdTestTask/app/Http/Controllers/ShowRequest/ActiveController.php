@@ -12,7 +12,7 @@ class ActiveController extends Controller
 {
     public function __invoke()
     {
-        $showReq = new SendRequest;
-        return view('showReq', ['data' => $showReq->where('status', '=', 'Active')->get()]);
+        $showReq = SendRequest::WHERE('status', '=', 'Active');
+        return view('showReq', ['data' => $showReq->get()]);
     }
 }

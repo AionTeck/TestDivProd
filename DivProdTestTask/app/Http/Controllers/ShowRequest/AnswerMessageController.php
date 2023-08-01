@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Mail;
 
 class AnswerMessageController extends Controller
 {
-        public function __invoke($id)
-        {
-            $showReq = new SendRequest;
-            return view('answerMessage',
-                ['data'=>$showReq->find($id)]
-            );
-        }
+    public function __invoke($id)
+    {
+        $showReq = new SendRequest;
+        return view('answerMessage',
+            ['data' => $showReq->find($id)]
+        );
+    }
 }

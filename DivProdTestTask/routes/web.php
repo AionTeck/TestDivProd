@@ -1,9 +1,13 @@
 <?php
 
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MainPageController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\SendReqPageController;
+use App\Http\Controllers\Login\LoginCreateController;
+use App\Http\Controllers\Login\LoginStoreController;
+use App\Http\Controllers\main\MainPageLogoutController;
+use App\Http\Controllers\main\MainPageShowController;
+use App\Http\Controllers\Register\RegisterCreateController;
+use App\Http\Controllers\Register\RegisterStoreController;
+use App\Http\Controllers\SendRequest\SendReqController;
+use App\Http\Controllers\SendRequest\ShowSendController;
 use App\Http\Controllers\ShowRequest\ActiveController;
 use App\Http\Controllers\ShowRequest\AnswerMessageController;
 use App\Http\Controllers\ShowRequest\AnswerSendController;
@@ -11,14 +15,6 @@ use App\Http\Controllers\ShowRequest\MessageController;
 use App\Http\Controllers\ShowRequest\NewestController;
 use App\Http\Controllers\ShowRequest\ResolvedController;
 use App\Http\Controllers\ShowRequest\ShowController;
-use App\Http\Controllers\SendRequest\ShowSendController;
-use App\Http\Controllers\SendRequest\SendReqController;
-use App\Http\Controllers\Register\RegisterStoreController;
-use App\Http\Controllers\Register\RegisterCreateController;
-use App\Http\Controllers\Login\LoginCreateController;
-use App\Http\Controllers\Login\LoginStoreController;
-use App\Http\Controllers\main\MainPageShowController;
-use App\Http\Controllers\main\MainPageLogoutController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,7 +36,7 @@ Route::get('/requests',
 Route::post('/requests/submit', [
     SendReqController::class, '__invoke'])->name('req_send');
 
-Route::middleware('guest')->group(function (){
+Route::middleware('guest')->group(function () {
     Route::get('/register',
         [RegisterCreateController::class, '__invoke'])->name('register');
     Route::post('/register',

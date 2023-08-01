@@ -8,11 +8,12 @@ use Illuminate\Support\Facades\Hash;
 
 class Service
 {
-    public function store($request){
+    public function store($request)
+    {
         $user = User::create([
-            'name' => $request -> name,
-            'email' => $request -> email,
-            'password' => Hash::make($request -> password)
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
         ]);
         Auth::login($user);
     }

@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class MainPageShowController extends Controller
 {
-    public function __invoke(){
+    public function __invoke()
+    {
         return view('main');
     }
 }

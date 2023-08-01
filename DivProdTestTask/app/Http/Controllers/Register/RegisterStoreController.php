@@ -11,9 +11,12 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterStoreController extends BaseController
 {
-    public function __invoke(RegisterStore $request){
-            $request->validated();
-            $this->service->store($request);
-            return redirect('/');
+    public function __invoke(RegisterStore $request)
+    {
+        //Использование созданного реквеста с валидацией
+        $request->validated();
+        //Использование функции Store в сервисе для передачи данных в БД
+        $this->service->store($request);
+        return redirect('/');
     }
 }
